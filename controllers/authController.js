@@ -88,10 +88,11 @@ exports.protect = async (req, res, next) => {
     }
 
     if(!token) {
-        return res.status(401).json({
-            status: 'fail',
-            message: 'Please log in to get access'
-        });
+        return res.redirect('/api/users/login');
+        // return res.status(401).json({
+        //     status: 'fail',
+        //     message: 'Please log in to get access'
+        // });
     }
 
     //Decode the token to get the user id
