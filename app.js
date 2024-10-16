@@ -11,11 +11,13 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.resolve('./views'));
 
-app.use(cookieParser());
-
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
+
+app.use(express.static('public'));
+
+app.use(cookieParser());
 
 app.get('/', authController.protect, (req, res) => {
     res.render('home', {

@@ -128,7 +128,7 @@
     <% books.forEach(book => { %>
         <div class="book-div">
             <div class="book-thumbnail">
-                <img src="<%= book.thumbnail %> || 'https://publications.iarc.fr/uploads/media/default/0001/02/thumb_1074_default_publication.jpeg'" alt="Thumbnail not available">
+                <img src="<%= book.thumbnail %>" alt="Thumbnail not available">
             </div>
             <div class="book-info">
                 <h4><%= book.title %></h4>
